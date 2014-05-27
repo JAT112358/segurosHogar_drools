@@ -1,0 +1,266 @@
+package seguros
+
+import es.deusto.ingenieria.si.sbc.seguros.Poliza
+import es.deusto.ingenieria.si.sbc.seguros.Poliza.Nombre
+import es.deusto.ingenieria.si.sbc.seguros.Vivienda
+import es.deusto.ingenieria.si.sbc.seguros.Vivienda.Antiguedad
+import es.deusto.ingenieria.si.sbc.seguros.Vivienda.CalidadConstruccion
+import es.deusto.ingenieria.si.sbc.seguros.Vivienda.RangoPresupuesto
+import es.deusto.ingenieria.si.sbc.seguros.Vivienda.Tarea
+import es.deusto.ingenieria.si.sbc.seguros.Vivienda.Tipo
+
+// REGLAS DE INTERPRETACION
+rule "Presupuesto Bajo"
+salience 10
+when
+	$vivienda: Vivienda(rangoPresupuesto == null, presupuesto < 150)
+then
+	$vivienda.setRangoPresupuesto(RangoPresupuesto.BAJO);
+	$vivienda.addHito("El presupuesto de la vivienda es: " + RangoPresupuesto.BAJO);
+	update($vivienda);
+end
+
+rule "Presupuesto Medio"
+salience 10
+when
+	$vivienda: Vivienda(rangoPresupuesto == null, presupuesto >= 150, presupuesto <= 250)
+then
+	$vivienda.setRangoPresupuesto(RangoPresupuesto.MEDIO);
+	$vivienda.addHito("El presupuesto de la vivienda es: " + RangoPresupuesto.MEDIO);
+	update($vivienda);
+end
+
+rule "Presupuesto Alto"
+salience 10
+when
+	$vivienda: Vivienda(rangoPresupuesto == null, presupuesto > 250)
+then
+	$vivienda.setRangoPresupuesto(RangoPresupuesto.ALTO);
+	$vivienda.addHito("El presupuesto de la vivienda es: " + RangoPresupuesto.ALTO);
+	update($vivienda);
+end
+
+rule "Vivienda Nueva"
+salience 10
+when
+	$vivienda: Vivienda(antiguedad == null, edad < 7)
+then
+	$vivienda.setAntiguedad(Antiguedad.NUEVA);
+	$vivienda.addHito("La antiguedad de la casa es: " + Antiguedad.NUEVA);
+	update($vivienda);
+end
+
+rule "Vivienda Seminueva"
+salience 10
+when
+	$vivienda: Vivienda(antiguedad == null, edad >= 7, edad <= 35)
+then
+	$vivienda.setAntiguedad(Antiguedad.SEMI_NUEVA);
+	$vivienda.addHito("La antiguedad de la casa es: " + Antiguedad.SEMI_NUEVA);
+	update($vivienda);
+end
+
+rule "Vivienda Vieja"
+salience 10
+when
+	$vivienda: Vivienda(antiguedad == null, edad > 35)
+then
+	$vivienda.setAntiguedad(Antiguedad.VIEJA);
+	$vivienda.addHito("La antiguedad de la casa es: " + Antiguedad.VIEJA);
+	update($vivienda);
+end
+
+// REGLAS GENERALES
+rule "Tarea Inicio"
+	when 
+		$vivienda : Vivienda (tarea == Tarea.INICIO)
+	then
+		$vivienda.setTarea(Tarea.PRESUPUESTO);
+		update($vivienda);
+end		
+
+rule "Tarea Presupuesto - BAJO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.PRESUPUESTO,
+								rangoPresupuesto != null, rangoPresupuesto == RangoPresupuesto.BAJO)
+	then
+		$vivienda.setTarea(Tarea.TIPO_VIVIENDA);
+		update($vivienda);
+end
+
+rule "Tarea Presupuesto - MEDIO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.PRESUPUESTO,
+								rangoPresupuesto != null, rangoPresupuesto == RangoPresupuesto.MEDIO)
+	then
+		$vivienda.setTarea(Tarea.ANTIGUEDAD);
+		update($vivienda);
+end
+
+rule "Tarea Presupuesto - ALTO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.PRESUPUESTO,
+								rangoPresupuesto != null, rangoPresupuesto == RangoPresupuesto.ALTO)
+	then
+		$vivienda.setTarea(Tarea.PERTENENCIAS);
+		update($vivienda);
+end
+
+rule "Tarea Tipo Vivienda - PISO -> TERCEROS"
+	when
+		$vivienda : Vivienda (tarea == Tarea.TIPO_VIVIENDA,
+								tipo != null, tipo == Tipo.PISO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.TERCEROS));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Tipo Vivienda - CASA UNIFAMILIAR -> ESENCIAL_HOGAR"
+	when
+		$vivienda : Vivienda (tarea == Tarea.TIPO_VIVIENDA,
+								tipo != null, tipo == Tipo.CASA_UNIFAMILIAR)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.ESENCIAL_HOGAR));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Pertenencias - NO VALIOSAS"
+	when
+		$vivienda : Vivienda (tarea == Tarea.PERTENENCIAS, pertenenciasValiosas == false)
+	then
+		$vivienda.setTarea(Tarea.ANTIGUEDAD);
+		update($vivienda);
+end
+
+rule "Tarea Pertenencias - VALIOSAS -> PLATINO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.PERTENENCIAS, pertenenciasValiosas == true)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.PLATINO));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -> MULTI_RIESGO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.ANTIGUEDAD,
+								antiguedad != null,
+								rangoPresupuesto != null,
+								antiguedad == Antiguedad.NUEVA,
+								rangoPresupuesto == RangoPresupuesto.MEDIO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.MULTI_RIESGO));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Antiguedad - VIEJA Y PRESUPUESTO MEDIO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.ANTIGUEDAD,
+								antiguedad != null,
+								rangoPresupuesto != null,
+								antiguedad == Antiguedad.VIEJA,
+								rangoPresupuesto == RangoPresupuesto.MEDIO)
+	then
+		$vivienda.setTarea(Tarea.OBRA_REMODELADO);
+		update($vivienda);
+end
+
+rule "Tarea Antiguedad - NUEVA Y PRESUPUESTO ALTO -> PLATA"
+	when
+		$vivienda : Vivienda (tarea == Tarea.ANTIGUEDAD,
+								antiguedad != null,
+								rangoPresupuesto != null,
+								antiguedad == Antiguedad.NUEVA,
+								rangoPresupuesto == RangoPresupuesto.ALTO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.PLATA));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Antiguedad - SEMINUEVA"
+	when
+		$vivienda : Vivienda (tarea == Tarea.ANTIGUEDAD,
+								antiguedad != null,
+								antiguedad == Antiguedad.SEMI_NUEVA)
+	then
+		$vivienda.setTarea(Tarea.CALIDAD);
+		update($vivienda);
+end
+
+rule "Tarea Obra y Remodelado - SI -> MULTI_RIESGO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.OBRA_REMODELADO,
+								mejoras != null,
+								mejoras == true)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.MULTI_RIESGO));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Obra y Remodelado - NO -> PLATA"
+	when
+		$vivienda : Vivienda (tarea == Tarea.OBRA_REMODELADO,
+								mejoras != null,
+								mejoras == false)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.PLATA));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Calidad - MEDIA Y PRESUPUESTO MEDIO -> PLATA"
+	when
+		$vivienda : Vivienda (tarea == Tarea.CALIDAD,
+								calidad != null,
+								rangoPresupuesto != null,
+								calidad == CalidadConstruccion.MEDIA,
+								rangoPresupuesto == RangoPresupuesto.MEDIO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.PLATA));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Calidad - EXCELENTE Y PRESUPUESTO MEDIO -> MULTIRIESGO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.CALIDAD,
+								calidad != null,
+								rangoPresupuesto != null,
+								calidad == CalidadConstruccion.EXCELENTE,
+								rangoPresupuesto == RangoPresupuesto.MEDIO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.MULTI_RIESGO));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -> ORO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.CALIDAD,
+								calidad != null,
+								rangoPresupuesto != null,
+								calidad == CalidadConstruccion.EXCELENTE,
+								rangoPresupuesto == RangoPresupuesto.ALTO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.ORO));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end
+
+rule "Tarea Calidad - MEDIA Y PRESUPUESTO ALTO -> PLATINO"
+	when
+		$vivienda : Vivienda (tarea == Tarea.CALIDAD,
+								calidad != null,
+								rangoPresupuesto != null,
+								calidad == CalidadConstruccion.MEDIA,
+								rangoPresupuesto == RangoPresupuesto.ALTO)
+	then
+		$vivienda.setPoliza(new Poliza(Nombre.PLATINO));
+		$vivienda.setTarea(Tarea.FIN);
+		retract($vivienda);
+end

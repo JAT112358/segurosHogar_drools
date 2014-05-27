@@ -1,0 +1,891 @@
+<object-stream>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Presupuesto: 300.0</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>2</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Presupuesto: 200.0</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>3</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Presupuesto: 300.0</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Presupuesto Medio [2]</activationId>
+      <rule>Presupuesto Medio</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Presupuesto: 200.0(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Presupuesto Medio [2]</activationId>
+      <rule>Presupuesto Medio</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Presupuesto: 200.0(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>2</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Presupuesto Medio [2]</activationId>
+      <rule>Presupuesto Medio</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Presupuesto Alto [3]</activationId>
+      <rule>Presupuesto Alto</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Presupuesto: 300.0(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Presupuesto Alto [1]</activationId>
+      <rule>Presupuesto Alto</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Presupuesto: 300.0(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Presupuesto Alto [3]</activationId>
+      <rule>Presupuesto Alto</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Presupuesto: 300.0(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>3</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Presupuesto Alto [3]</activationId>
+      <rule>Presupuesto Alto</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Presupuesto Alto [1]</activationId>
+      <rule>Presupuesto Alto</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Presupuesto: 300.0(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Presupuesto Alto [1]</activationId>
+      <rule>Presupuesto Alto</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Vivienda Nueva [2]</activationId>
+      <rule>Vivienda Nueva</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Vivienda Nueva [2]</activationId>
+      <rule>Vivienda Nueva</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Edad: 6
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>2</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Vivienda Nueva [2]</activationId>
+      <rule>Vivienda Nueva</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Vivienda Seminueva [1]</activationId>
+      <rule>Vivienda Seminueva</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Vivienda Seminueva [1]</activationId>
+      <rule>Vivienda Seminueva</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Edad: 20
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Vivienda Seminueva [1]</activationId>
+      <rule>Vivienda Seminueva</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Vivienda Vieja [3]</activationId>
+      <rule>Vivienda Vieja</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Vivienda Vieja [3]</activationId>
+      <rule>Vivienda Vieja</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Edad: 40
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>3</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Vivienda Vieja [3]</activationId>
+      <rule>Vivienda Vieja</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Presupuesto - MEDIO [2]</activationId>
+      <rule>Tarea Presupuesto - MEDIO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Presupuesto - MEDIO [2]</activationId>
+      <rule>Tarea Presupuesto - MEDIO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>2</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Presupuesto - MEDIO [2]</activationId>
+      <rule>Tarea Presupuesto - MEDIO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Presupuesto - ALTO [1]</activationId>
+      <rule>Tarea Presupuesto - ALTO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Presupuesto - ALTO [3]</activationId>
+      <rule>Tarea Presupuesto - ALTO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Presupuesto - ALTO [1]</activationId>
+      <rule>Tarea Presupuesto - ALTO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Presupuesto - ALTO [1]</activationId>
+      <rule>Tarea Presupuesto - ALTO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Presupuesto - ALTO [3]</activationId>
+      <rule>Tarea Presupuesto - ALTO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>3</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Presupuesto - ALTO [3]</activationId>
+      <rule>Tarea Presupuesto - ALTO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Pertenencias - NO VALIOSAS [3]</activationId>
+      <rule>Tarea Pertenencias - NO VALIOSAS</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Pertenencias - NO VALIOSAS [1]</activationId>
+      <rule>Tarea Pertenencias - NO VALIOSAS</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Pertenencias - NO VALIOSAS [3]</activationId>
+      <rule>Tarea Pertenencias - NO VALIOSAS</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>3</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Pertenencias - NO VALIOSAS [3]</activationId>
+      <rule>Tarea Pertenencias - NO VALIOSAS</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Wayne Manor - Bristol Hills, Gotham City
+   * Propietario: Bruce Wayne
+   * Antiguedad: VIEJA
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: VIEJA(3)</declarations>
+      <factHandleIds>3</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Pertenencias - NO VALIOSAS [1]</activationId>
+      <rule>Tarea Pertenencias - NO VALIOSAS</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Pertenencias - NO VALIOSAS [1]</activationId>
+      <rule>Tarea Pertenencias - NO VALIOSAS</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -&gt; MULTI_RIESGO [2]</activationId>
+      <rule>Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -&gt; MULTI_RIESGO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -&gt; MULTI_RIESGO [2]</activationId>
+      <rule>Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -&gt; MULTI_RIESGO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>3</type>
+      <factId>2</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * POLIZA RECOMENDADA: MULTI_RIESGO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -&gt; MULTI_RIESGO [2]</activationId>
+      <rule>Tarea Antiguedad - NUEVA Y PRESUPUESTO MEDIO -&gt; MULTI_RIESGO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: Metropolis, Illinois
+   * Propietario: Clark Kent
+   * Tipo: PISO
+   * Calidad construccion: MEDIA
+   * Antiguedad: NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: MEDIO
+   * POLIZA RECOMENDADA: MULTI_RIESGO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: MEDIO
+      - La antiguedad de la casa es: NUEVA(2)</declarations>
+      <factHandleIds>2</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Antiguedad - SEMINUEVA [1]</activationId>
+      <rule>Tarea Antiguedad - SEMINUEVA</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Antiguedad - SEMINUEVA [1]</activationId>
+      <rule>Tarea Antiguedad - SEMINUEVA</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Antiguedad - SEMINUEVA [1]</activationId>
+      <rule>Tarea Antiguedad - SEMINUEVA</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -&gt; ORO [1]</activationId>
+      <rule>Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -&gt; ORO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -&gt; ORO [1]</activationId>
+      <rule>Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -&gt; ORO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>3</type>
+      <factId>1</factId>
+      <objectToString>- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * POLIZA RECOMENDADA: ORO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -&gt; ORO [1]</activationId>
+      <rule>Tarea Calidad - EXCELENTE Y PRESUPUESTO ALTO -&gt; ORO</rule>
+      <declarations>$vivienda=- Informacion de la vivienda:
+   * Direccion: 20 Ingram St. Forest Hills, NY (Queens)
+   * Propietario: Peter Parker
+   * Tipo: CASA_UNIFAMILIAR
+   * Calidad construccion: EXCELENTE
+   * Antiguedad: SEMI_NUEVA
+   * Tiene mejoras
+   * Rango Presupuesto: ALTO
+   * POLIZA RECOMENDADA: ORO
+   * RED DE SEGURIDAD (hitos): 
+      - El presupuesto de la vivienda es: ALTO
+      - La antiguedad de la casa es: SEMI_NUEVA(1)</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+  </events>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+</object-stream>
